@@ -163,3 +163,8 @@ if [ $? -eq 0 ]; then
                                 fi
                                 unset __conda_setup
                                 # <<< conda initialize <<<
+
+# ---------------------
+# 起動時にtmux起動  https://qiita.com/fieldville/items/e24500165be947db8eaa
+# ---------------------
+[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
