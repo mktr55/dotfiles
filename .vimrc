@@ -403,8 +403,8 @@ nnoremap う u
 nnoremap お o
 nnoremap っd dd
 nnoremap っy yy
-nnoremap っｄdd
-nnoremap っｙyy
+"nnoremap っｄdd
+"nnoremap っｙyy
 nnoremap ｘ x
 nnoremap ： :
 
