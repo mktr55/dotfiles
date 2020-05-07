@@ -29,7 +29,7 @@ zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
-eval "$(dircolors -b)"
+#eval "$(dircolors -b)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
@@ -70,14 +70,16 @@ function ranger-cd {
 #bind '"\C-o":"ranger-cd\C-m"'
 
 #OFFICEパス追加
-export PATH=$PATH:/mnt/c/Program\ Files\ \(x86\)/Microsoft\ Office/Office15
+#export PATH=$PATH:/mnt/c/Program\ Files\ \(x86\)/Microsoft\ Office/Office15
 
 
 # 追加PATH関連
-alias ppt='POWERPNT.EXE'
-alias excel='EXCEL.EXE'
-alias word='WINWORD.EXE'
-alias open='wsl-open'
+#alias ppt='POWERPNT.EXE'
+#alias excel='EXCEL.EXE'
+#alias word='WINWORD.EXE'
+#alias open='wsl-open'
+alias acrobat='open -a Adobe\ Acrobat'
+
 
 
 
@@ -99,10 +101,10 @@ function ranger-cd {
 
 # ranger-cdエイリアス
 alias ranger='ranger-cd'
-# openコマンドでexplorerを開けるように
-function open {
-    pwd | sed -e "s;/mnt/c;C:;" -e "s;\/;\\\\\\\\;g" | xargs explorer.exe
-}
+# # openコマンドでexplorerを開けるように
+# function open {
+#     pwd | sed -e "s;/mnt/c;C:;" -e "s;\/;\\\\\\\\;g" | xargs explorer.exe
+# }
 
 
 
@@ -124,3 +126,40 @@ fi
 
 #Kドライブマウント
 alias kdrive="sudo mount -t drvfs K: /mnt/kdrive"
+
+# # >>> conda initialize >>>
+# # !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/Users/kz/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/Users/kz/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "/Users/kz/anaconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/Users/kz/anaconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# # <<< conda initialize <<<
+#
+# export PATH="/usr/local/sbin:$PATH"
+# source ~/anaconda3/etc/profile.d/conda.sh
+
+
+# added by Anaconda3 5.1.0 installer
+export PATH="/Users/kz/anaconda3/bin:$PATH"  # commented out by conda initialize
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+    else
+        if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+                . "/opt/anaconda3/etc/profile.d/conda.sh"
+                    else
+                            export PATH="/opt/anaconda3/bin:$PATH"
+                                fi
+                                fi
+                                unset __conda_setup
+                                # <<< conda initialize <<<
