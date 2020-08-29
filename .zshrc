@@ -43,6 +43,24 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
+# #powerline
+# function powerline_precmd() {
+#     PS1="$(~/.local/bin/powerline-shell --shell zsh $?)"
+# }
+# 
+# function install_powerline_precmd() {
+#   for s in "${precmd_functions[@]}"; do
+#     if [ "$s" = "powerline_precmd" ]; then
+#       return
+#     fi
+#   done
+#   precmd_functions+=(powerline_precmd)
+# }
+# 
+# if [ "$TERM" != "linux" ]; then
+#     install_powerline_precmd
+# fi
+
 #alias
 alias g="googler -n 3"
 
@@ -168,3 +186,7 @@ if [ $? -eq 0 ]; then
 # 起動時にtmux起動  https://qiita.com/fieldville/items/e24500165be947db8eaa
 # ---------------------
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
+
+
+# Starship
+eval "$(starship init zsh)"
