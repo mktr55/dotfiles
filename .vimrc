@@ -1,3 +1,4 @@
+
 "setting
 "文字コードをUFT-8に設定
 set fenc=utf-8
@@ -35,13 +36,15 @@ set wildmode=list:longest
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
-" シンタックスハイライトの有効化
-syntax enable
+
+" http://vimblog.hatenablog.com/entry/vimrc_key_mapping
+nnoremap ; :
+
 
 
 " Tab系
 " 不可視文字を可視化(タブが「▸-」と表示される)
-"set list listchars=tab:\▸\-
+set list listchars=tab:\▸\-
 " Tab文字を半角スペースにする
 set expandtab
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
@@ -64,6 +67,22 @@ set wrapscan
 set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+
+" https://qiita.com/lighttiger2505/items/2f6e4686b8db051378c0
+"コマンドモード
+
+set nocompatible
+set wildmenu
+
+" https://vim-jp.org/vim-users-jp/2011/01/31/Hack-198.html
+" 新しいウィンドウを下に開く
+set splitbelow
+
+" 新しいウィンドウを右に開く
+set splitright
+
+" https://koirand.github.io/blog/2019/vim-memo/
+autocmd BufNewFile,BufRead memo.md $r! echo '--------------------------------------------------------------------------------' && date
 
 "--------------------------------------------------------
 "追記
@@ -128,8 +147,246 @@ if has('vim_starting')
                               Plug 'Shougo/vimshell.vim'
                               "2019-08-26 日本語マニュアル追記
                               Plug 'vim-jp/vimdoc-ja'
+                              "ranger 追加 2021-02-17動かない？
+                              Plug 'francoiscabrol/ranger.vim'
+                              " ranger　追加2021-02-17
+                              "vim-plug
+                              Plug 'iberianpig/ranger-explorer.vim'
+                              "vim-renamer
+                              Plug 'qpkorr/vim-renamer'
+
+                              "カラースキーム関係
+                              " https://qiita.com/KeitaNakamura/items/6073a872df5452a36dd6
+                              Plug 'Shougo/unite.vim'
+                              Plug 'ujihisa/unite-colorscheme'
+                              " カラースキーム一覧
+                              Plug 'altercation/vim-colors-solarized' " solarized
+                              Plug 'croaker/mustang-vim'              " mustang
+                              Plug 'jeffreyiacono/vim-colors-wombat'  " wombat
+                              Plug 'nanotech/jellybeans.vim'          " jellybeans
+                              Plug 'vim-scripts/Lucius'               " lucius
+                              Plug 'vim-scripts/Zenburn'              " zenburn
+                              Plug 'mrkn/mrkn256.vim'                 " mrkn256
+                              Plug 'jpo/vim-railscasts-theme'         " railscasts
+                              Plug 'therubymug/vim-pyte'              " pyte
+                              Plug 'tomasr/molokai'                   " molokai
+                              Plug 'chriskempson/vim-tomorrow-theme'  " tomorrow night
+                              Plug 'vim-scripts/twilight'             " twilight
+                              Plug 'w0ng/vim-hybrid'                  " hybrid
+                              Plug 'freeo/vim-kalisi'                 " kalisi
+                              Plug 'morhetz/gruvbox'                  " gruvbox
+                              Plug 'toupeira/vim-desertink'           " desertink
+                              Plug 'sjl/badwolf'                      " badwolf
+                              Plug 'itchyny/landscape.vim'            " landscape
+                              Plug 'joshdick/onedark.vim'             " onedark in atom
+                              Plug 'gosukiwi/vim-atom-dark'           " atom-dark
 
                               call plug#end()
+
+
+"" ultisnip
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsEditSplit="vertical"
+
+"" youcompleteme 動かない？？
+"let g:ycm_server_python_interpreter = '/usr/bin/python2.7'
+"let g:ycm_python_binary_path = '/usr/bin/python2.7'
+"let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/.ycm_extra_conf.py'
+"let g:ycm_auto_trigger = 1
+"let g:ycm_min_num_of_chars_for_completion = 1
+"let g:ycm_autoclose_preview_window_after_insertion = 1
+"let g:ycm_key_list_select_completion = ['<Down>']
+"let g:ycm_key_list_previous_completion = ['<Up>']
+""エラーになるため
+"let g:ycm_key_list_stop_completion = ['<C-y>', '<Enter>']
+"let g:ycm_seed_identifiers_with_syntax = 1
+"let g:SuperTabDefaultCompletionType = '<C-n>'
+"let g:make = 'gmake'
+"if exists('make')
+"    let g:make = 'make'
+"endif
+
+" "" auto-format
+" au BufWrite * :Autoformat
+" エラーになるのでコメントアウト
+
+"" vim-airline
+let g:airline_theme = 'powerlineish'
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline_skip_empty_sections = 1
+
+"  emmet
+
+"" nerdtree
+" let g:NERDTreeChDirMode=2
+" let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
+" let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
+" let g:NERDTreeShowBookmarks=1
+" let g:nerdtree_tabs_focus_on_files=1
+" let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
+" let g:NERDTreeWinSize = 30
+" let NERDTreeShowHidden=1
+" set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
+" nnoremap <Leader>dir :NERDTreeTabsToggle<CR>
+" autocmd BufWritePre * :FixWhitespace
+" augroup NERD
+"     au!
+"     autocmd VimEnter * NERDTree
+"     autocmd VimEnter * wincmd p
+" augroup END
+"
+"https://www.toumasu-program.net/entry/2019/01/28/105352
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-n> :NERDTreeToggle<CR>
+
+"https://qiita.com/yaginuuu/items/d0a8d045035ab251c96c
+" 他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" 隠しファイルを表示する
+let NERDTreeShowHidden = 1
+" https://stackoverflow.com/questions/4819079/vim-nerdtree-open-bookmarks-when-vim-is-started
+let NERDTreeShowBookmarks=1
+
+
+
+"" quickrun
+ 
+nnoremap <Leader>go :QuickRun<CR>
+nnoremap <C-U>qr :QuickRun<CR>
+let g:quickrun_config={'*': {'split': ''}}
+let g:quickrun_config.cpp = {
+            \   'command': 'g++',
+            \   'cmdopt': '-std=c++11'
+            \ }
+
+"" vim-easy-align
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
+"" vimshell
+"" nnoremap <Leader>sh :VimShellPop<CR>
+nnoremap <Leader>sh :vertical terminal<CR>
+let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
+let g:vimshell_prompt =  '$ '
+
+"" syntastic
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_style_error_symbol = '✗'
+let g:syntastic_style_warning_symbol = '⚠'
+let g:syntastic_auto_loc_list=1
+let g:syntastic_aggregate_errors = 1
+
+"" jedi-vim
+let g:jedi#popup_on_dot = 0
+let g:jedi#goto_assignments_command = "<leader>g"
+let g:jedi#goto_definitions_command = "<leader>d"
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>n"
+let g:jedi#rename_command = "<leader>r"
+let g:jedi#show_call_signatures = "0"
+let g:jedi#completions_command = "<C-Space>"
+let g:jedi#smart_auto_mappings = 0
+let g:jedi#force_py_version = 3
+autocmd FileType python setlocal completeopt-=preview
+
+"" syntastic
+let g:syntastic_python_checkers=['python', 'flake8']
+let g:polyglot_disabled = ['python']
+let python_highlight_all = 1
+
+" "" vim-airline
+" let g:airline#extensions#virtualenv#enabled = 1
+" if !exists('g:airline_symbols')
+"     let g:airline_symbols = {}
+" endif
+" if !exists('g:airline_powerline_fonts')
+"     let g:airline#extensions#tabline#left_sep = ' '
+"     let g:airline#extensions#tabline#left_alt_sep = '|'
+"     let g:airline_left_sep          = '▶'
+"     let g:airline_left_alt_sep      = '»'
+"     let g:airline_right_sep         = '◀'
+"     let g:airline_right_alt_sep     = '«'
+"     let g:airline#extensions#branch#prefix     = '⤴' "➔, ➥, ⎇
+"     let g:airline#extensions#readonly#symbol   = '⊘'
+"     let g:airline#extensions#linecolumn#prefix = '¶'
+"     let g:airline#extensions#paste#symbol      = 'ρ'
+"     let g:airline_symbols.linenr    = '␊'
+"     let g:airline_symbols.branch    = '⎇'
+"     let g:airline_symbols.paste     = 'ρ'
+"     let g:airline_symbols.paste     = 'Þ'
+"     let g:airline_symbols.paste     = '∥'
+"     let g:airline_symbols.whitespace = 'Ξ'
+" else
+"     let g:airline#extensions#tabline#left_sep = ''
+"     let g:airline#extensions#tabline#left_alt_sep = ''
+"     let g:airline_left_sep = ''
+"     let g:airline_left_alt_sep = ''
+"     let g:airline_right_sep = ''
+"     let g:airline_right_alt_sep = ''
+"     let g:airline_symbols.branch = ''
+"     let g:airline_symbols.readonly = ''
+"     let g:airline_symbols.linenr = ''
+" endif
+
+" function
+""" xaml
+"augroup MyXML
+"    autocmd!
+"    autocmd Filetype xml inoremap <buffer> </ </<C-x><C-o>
+"    autocmd Filetype html inoremap <buffer> </ </<C-x><C-o>
+"augroup END
+
+" "" The PC is fast enough, do syntax highlight syncing from start unless 200 lines
+" augroup vimrc-sync-fromstart
+"     autocmd!
+"     autocmd BufEnter * :syntax sync maxlines=200
+" augroup END
+
+" "" Remember cursor position
+" augroup vimrc-remember-cursor-position
+"     autocmd!
+"     autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+" augroup END
+
+" "" txt
+" augroup vimrc-wrapping
+"     autocmd!
+"     autocmd BufRead,BufNewFile *.txt call s:setupWrapping()
+" augroup END
+" if !exists('*s:setupWrapping')
+"     function s:setupWrapping()
+"         set wrap
+"         set wm=2
+"         set textwidth=79
+"     endfunction
+" endif
+
+" "" make/cmake
+" augroup vimrc-make-cmake
+"     autocmd!
+"     autocmd FileType make setlocal noexpandtab
+"     autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
+" augroup END
+
+" "" python
+" augroup vimrc-python
+"     autocmd!
+"     autocmd FileType python setlocal
+"                 \ formatoptions+=croq softtabstop=4
+"                 \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+" augroup END
+
+
+
 
 "escを押した時の挙動 2019-06-11 追記
 "inoremap <ESC> <ESC>:set iminsert=0<CR>  " ESCでIMEを確実にOFF"
@@ -158,7 +415,7 @@ nnoremap ｘ x
 nnoremap ： :
 
 " jjでエスケープ ↓何故か動かない
-"inoremap <silent> jj <ESC> 
+"inoremap <silent> jj <ESC>
 " jjでエスケープ
 inoremap jj <ESC>
 
@@ -172,7 +429,7 @@ inoremap jj <ESC>
 inoremap っｊ <ESC>
 
 
-set relativenumber
+" set relativenumber
 
 
 "<c-r>: redoが覚え辛いので変更
@@ -180,3 +437,112 @@ nnoremap U <c-r>
 "自然なキーマップで移動量拡張
 nnoremap J 10<Down>
 nnoremap K 10<Up>
+
+
+"for Python in vscode
+"マークダウン追記 iで一旦インサートモードへ
+nnoremap <Leader>l i# %% [markdown]<CR># ##<ESC>
+
+"print追記
+nnoremap <Leader>p iprint()<ESC>i
+
+"リスト内記法
+
+noremap <Leader>[ i[i for i in ]<ESC>i
+
+"https://qiita.com/iwaseasahi/items/a45b99a484966662adbe
+"クリップボード連携[重要]
+set clipboard+=unnamed
+
+"使えそうなものを再度拝借
+"https://qiita.com/ulwlu/items/98901f4c4f0683e7aa57
+
+nnoremap <Leader>qqq :q!<CR>
+
+"" split
+nnoremap <Leader>s :<C-u>split<CR>
+nnoremap <Leader>v :<C-u>vsplit<CR>
+
+"" Tabs
+nnoremap <Leader>t :tabnew<CR>
+
+"" 検索
+vnoremap <Leader><Leader> :%s/
+nnoremap <Leader><Leader> :%s/
+" ポップアップでターミナルウインドウ起動
+" https://qiita.com/gorilla0513/items/f59e54606f6f4d7e3514
+" command! Terminal call popup_create(term_start([&shell], #{ hidden: 1, term_finish: 'close'}), #{ border: [], minwidth: winwidth(0)/2, minheight: &lines/2 })
+
+"Terminal 最下部に表示
+" https://knowledge.sakura.ad.jp/23018/
+nnoremap <Leader>t :bo terminal<CR>
+
+" https://knowledge.sakura.ad.jp/23018/
+nnoremap <Leader>vt :vert terminal<CR>
+
+"折りたたみ
+nnoremap ;; zf
+vnoremap ;; zf
+
+"カラースキーム関係は後ろの方に入れていないとエラーになる???
+"https://rcmdnk.com/blog/2017/07/18/computer-vim/
+" シンタックスハイライトの有効化
+syntax on
+"カラースキーム指定
+colorscheme onedark
+
+" 自動で日付挿入
+" https://note103.hateblo.jp/entry/2016/12/30/092647
+" :w 版
+" function! s:wsave()
+"   execute ":w ~/mx/".strftime('%Y-%m-%d-%H-%M-%S').".txt"
+" endfunction
+" nnoremap <silent> <Leader><Leader>w :<C-u>call <SID>wsave()<CR>
+" " :f 版
+" function! s:fsave()
+"   execute ":f ~/mx/".strftime('%Y-%m-%d-%H-%M-%S').".txt"
+" endfunction
+" nnoremap <silent> <Leader><Leader>f :<C-u>call <SID>fsave()<CR>
+"
+function! s:newfile(title)
+  execute ":f ~/mx/".strftime('%Y-%m-%d-%H-%M-%S').a:title.".md"
+endfunction
+nnoremap <Leader>nf :<C-u>call <SID>newfile("-")<Left><Left>
+
+
+" vimrc再読込　うまく動かない
+nnoremap <Leader>rc :source ~.vimrc<CR>
+
+" https://qiita.com/mathbbN/items/d76bb8785f89652fb419
+" set foldtext=getline(v:foldstart)
+" set fillchars=fold:\ 
+" au Colorscheme * hi Folded ctermfg=HotPink guifg=HotPink
+
+" https://stackoverflow.com/questions/33281187/how-to-change-the-way-that-vim-display-those-collapsed-folded-lines/33281531
+" function! MyFoldText()
+"       let nblines = v:foldend - v:foldstart + 1
+"       let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
+"       let line = getline(v:foldstart)
+"       let comment = substitute(line, '/\*\|\*/\|{{{\d\=', ', 'g')
+"       let expansionString = repeat(".", w - strwidth(nblines.comment.'"'))
+"       let txt = '"' . comment . expansionString . nblines
+" return txt
+" endfunction
+" set foldtext=MyFoldText()
+
+" https://qiita.com/koara-local/items/52d94b8ab72d654bcd92
+" auto reload .vimrc
+" augroup source-vimrc
+"   autocmd!
+"   autocmd BufWritePost *vimrc source $MYVIMRC | set foldmethod=marker
+"   autocmd BufWritePost *gvimrc if has('gui_running') source $MYGVIMRC
+" augroup END
+
+" Source the vimrc file after saving it
+" https://coderwall.com/p/iw-tmg/auto-reload-vimrc-after-write
+if has("autocmd")
+    autocmd bufwritepost .vimrc source $MYVIMRC
+endif
+
+set foldtext=getline(v:foldstart)
+hi Folded ctermfg=grey
