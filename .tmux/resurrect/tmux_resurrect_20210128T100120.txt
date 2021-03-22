@@ -1,0 +1,7 @@
+pane	0	0	:zsh	0	:	0	:/Users/kz/Downloads	1	Python	:/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python -O /usr/local/bin/ranger --choosedir=/var/folders/dd/dpj3bhzx0nz22mvjdzqtxync0000gn/T/tmp.XXXXXX.EWCguwqb /Users/kz/Downloads
+pane	0	1	:fish	0	:-	0	:/Users/kz	1	Python	:/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python -O /usr/local/bin/ranger --choosedir=/var/folders/dd/dpj3bhzx0nz22mvjdzqtxync0000gn/T/tmp.XXXXXX.4TsMl0Wq /Users/kz
+pane	0	2	:fish	1	:*	0	:/Users/kz	1	fish	:fish
+window	0	0	0	:	c37e,125x36,0,0,1
+window	0	1	0	:-	c37f,125x36,0,0,2
+window	0	2	1	:*	c380,125x36,0,0,3
+state	0	

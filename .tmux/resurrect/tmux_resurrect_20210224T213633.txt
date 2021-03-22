@@ -1,0 +1,88 @@
+pane	0	2	:fish	1	:*	0	:/Users/kz	0	fish	:
+pane	0	2	:fish	1	:*	1	:/Users/kz	0	fish	:
+pane	0	2	:fish	1	:*	2	:/Users/kz	0	fish	:
+pane	0	2	:fish	1	:*	3	:/Users/kz/Documents/Applications_	0	fish	:
+pane	0	2	:fish	1	:*	4	:/Users/kz	1	fish	:
+pane	0	2	:fish	1	:*	5	:/Users/kz	0	fish	:
+pane	0	2	:fish	1	:*	6	:/Users/kz	0	fish	:
+pane	1	0	:fish	1	:*	0	:/Users/kz	0	fish	:
+pane	1	0	:fish	1	:*	1	:/Users/kz	0	fish	:
+pane	1	0	:fish	1	:*	2	:/Users/kz	0	fish	:
+pane	1	0	:fish	1	:*	3	:/Users/kz	0	fish	:
+pane	1	0	:fish	1	:*	4	:/Users/kz	1	fish	:
+pane	1	0	:fish	1	:*	5	:/Users/kz	0	fish	:
+pane	1	0	:fish	1	:*	6	:/Users/kz	0	fish	:
+pane	10	0	:fish	0	:-	0	:/Users/kz	1	fish	:
+pane	10	0	:fish	0	:-	1	:/Users/kz	0	fish	:
+pane	10	1	:fish	1	:*	0	:/Users/kz	1	fish	:
+pane	11	0	:fish	1	:*	0	:/Users/kz	1	fish	:
+pane	11	0	:fish	1	:*	1	:/Users/kz	0	fish	:
+pane	12	0	:Python	1	:*	0	:/Users/kz	0	fish	:
+pane	12	0	:Python	1	:*	1	:/Users/kz	1	fish	:
+pane	13	0	:Python	1	:*	0	:/Users/kz	0	fish	:
+pane	13	0	:Python	1	:*	1	:/Users/kz	1	fish	:
+pane	15	0	:fish	1	:*	0	:/Users/kz	1	fish	:
+pane	15	0	:fish	1	:*	1	:/Users/kz	0	fish	:
+pane	16	0	:fish	1	:*	0	:/Users/kz	1	fish	:
+pane	17	0	:fish	1	:*	0	:/Users/kz	1	fish	:
+pane	17	0	:fish	1	:*	1	:/Users/kz	0	fish	:
+pane	18	0	:Python	1	:*	0	:/Users/kz	0	fish	:
+pane	18	0	:Python	1	:*	1	:/Users/kz	1	fish	:
+pane	19	0	:Python	1	:*	0	:/Users/kz	1	fish	:
+pane	20	0	:Python	1	:*	0	:/Users/kz	0	fish	:
+pane	20	0	:Python	1	:*	1	:/Users/kz	1	fish	:
+pane	21	0	:Python	1	:*	0	:/Users/kz	0	fish	:
+pane	21	0	:Python	1	:*	1	:/Users/kz	1	fish	:
+pane	22	0	:Python	1	:*	0	:/Users/kz	0	fish	:
+pane	22	0	:Python	1	:*	1	:/Users/kz	1	fish	:
+pane	23	0	:vim	1	:*	0	:/Users/kz	0	fish	:
+pane	23	0	:vim	1	:*	1	:/Users/kz	1	vim	:vim
+pane	24	0	:vim	1	:*	0	:/Users/kz	0	fish	:
+pane	24	0	:vim	1	:*	1	:/Users/kz	1	vim	:vim
+pane	25	0	:fish	1	:*	0	:/Users/kz	1	fish	:
+pane	26	0	:vim	0	:-	0	:/Users/kz	0	fish	:
+pane	26	0	:vim	0	:-	1	:/Users/kz	1	vim	:vim
+pane	26	1	:fish	1	:*	0	:/Users/kz	1	fish	:
+pane	26	1	:fish	1	:*	1	:/Users/kz	0	fish	:
+pane	27	0	:fish	1	:*	0	:/Users/kz	0	vim	:vim
+pane	27	0	:fish	1	:*	1	:/Users/kz	1	fish	:
+pane	3	0	:Python	1	:*	0	:/Users/kz/clouds/urakamikz@gmail.com/memox	1	fish	:
+pane	33	1	:fish	1	:*	0	:/Users/kz	0	vim	:vim mx/2021-02-24-1on1-kusakabesan.md
+vim mx/2021-02-24-1on1-kusakabesan.md
+pane	33	1	:fish	1	:*	1	:/Users/kz	1	fish	:
+pane	5	0	:Python	1	:*	0	:/Users/kz	1	fish	:
+pane	6	0	:Python	1	:*	0	:/Users/kz	1	fish	:
+pane	7	0	:Python	1	:*	0	:/Users/kz	1	fish	:
+pane	8	0	:fish	1	:*	0	:/Users/kz	0	fish	:
+pane	8	0	:fish	1	:*	1	:/Users/kz	1	fish	:
+pane	9	0	:fish	1	:*	0	:/Users/Shared	0	fish	:
+pane	9	0	:fish	1	:*	1	:/Users/kz	1	fish	:
+window	0	2	1	:*	7543,112x18,0,0{55x18,0,0,3,56x18,56,0[56x1,56,0,4,56x1,56,2,5,56x1,56,4,6,56x1,56,6,7,56x8,56,8,8,56x1,56,17,9]}
+window	1	0	1	:*	3f57,112x18,0,0{55x18,0,0,10,56x18,56,0[56x1,56,0,11,56x1,56,2,12,56x1,56,4,13,56x1,56,6,14,56x8,56,8,15,56x1,56,17,16]}
+window	10	0	0	:-	365e,112x18,0,0[112x8,0,0,17,112x9,0,9,18]
+window	10	1	1	:*	6318,112x18,0,0,19
+window	11	0	1	:*	fee6,112x18,0,0[112x9,0,0,20,112x8,0,10,21]
+window	12	0	1	:*	f649,112x18,0,0[112x8,0,0,22,112x9,0,9,23]
+window	13	0	1	:*	fef0,112x18,0,0[112x9,0,0,24,112x8,0,10,25]
+window	15	0	1	:*	f65b,112x18,0,0[112x8,0,0,26,112x9,0,9,27]
+window	16	0	1	:*	e317,112x18,0,0,28
+window	17	0	1	:*	b664,112x18,0,0[112x8,0,0,29,112x9,0,9,30]
+window	18	0	1	:*	b647,112x18,0,0[112x8,0,0,31,112x9,0,9,32]
+window	19	0	1	:*	6313,112x18,0,0,33
+window	20	0	1	:*	3655,112x18,0,0[112x8,0,0,34,112x9,0,9,35]
+window	21	0	1	:*	365e,112x18,0,0[112x8,0,0,36,112x9,0,9,37]
+window	22	0	1	:*	3667,112x18,0,0[112x8,0,0,38,112x9,0,9,39]
+window	23	0	1	:*	7645,112x18,0,0[112x8,0,0,40,112x9,0,9,41]
+window	24	0	1	:*	3fee,112x18,0,0{56x18,0,0,42,55x18,57,0,43}
+window	25	0	1	:*	e314,112x18,0,0,44
+window	26	0	0	:-	bff5,112x18,0,0{56x18,0,0,45,55x18,57,0,46}
+window	26	1	1	:*	bffa,112x18,0,0{56x18,0,0,47,55x18,57,0,48}
+window	27	0	1	:*	fffa,112x18,0,0{56x18,0,0,49,55x18,57,0,50}
+window	3	0	1	:*	6315,112x18,0,0,54
+window	33	1	1	:*	74bc,112x44,0,0{56x44,0,0,69,55x44,57,0,73}
+window	5	0	1	:*	6316,112x18,0,0,55
+window	6	0	1	:*	6317,112x18,0,0,56
+window	7	0	1	:*	6318,112x18,0,0,57
+window	8	0	1	:*	befe,112x18,0,0[112x9,0,0,58,112x8,0,10,59]
+window	9	0	1	:*	f649,112x18,0,0[112x8,0,0,60,112x9,0,9,61]
+state	33	
