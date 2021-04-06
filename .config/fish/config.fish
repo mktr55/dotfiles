@@ -15,4 +15,20 @@ function fish_user_key_bindings
   fish_vi_key_bindings --no-erase
 end
 
+# https://qiita.com/jonpili/items/1b77a522895cbc9cb67f
+#status --is-interactive; and source (rbenv init -|psub)
+
+# neovimの設定ファイル配置場所
+set -gx XDG_CONFIG_HOME "$HOME/.config"
+
+#EDITOR=nvim
+
+# https://qiita.com/kamykn/items/aa9920f07487559c0c7e
+# fd - cd to selected directory
+
+
+#https://qiita.com/ryicoh/items/2301a0c4488a22cfbbe2
+#FZF_DEFAULT_COMMAND='fd --type f'
+#FZF_CTRL_T_COMMAND='fd --type f'
+#FZF_ALT_C_COMMAND='fd --type d'
 
