@@ -70,8 +70,9 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " https://qiita.com/lighttiger2505/items/2f6e4686b8db051378c0
 "コマンドモード
-
+" http://cohama.hateblo.jp/entry/20130529/1369843236
 set nocompatible
+set wildmode=longest:full,full
 set wildmenu
 
 " https://vim-jp.org/vim-users-jp/2011/01/31/Hack-198.html
@@ -108,78 +109,61 @@ if has('vim_starting')
                               " plugin
                               call plug#begin(expand('~/.vim/plugged'))
                               "" space + ne -> sidebar
-                              Plug 'scrooloose/nerdtree'
-                              Plug 'jistr/vim-nerdtree-tabs'
-                              "" ga -> align
-                              Plug 'junegunn/vim-easy-align'
-                              "" space + go -> exec script
-                              Plug 'thinca/vim-quickrun'
-                              Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-                              "" gcc -> comment
-                              Plug 'tpope/vim-commentary'
-                              "" option bar
-                              Plug 'vim-airline/vim-airline'
-                              Plug 'vim-airline/vim-airline-themes'
-                              "" auto bracket
-                              Plug 'Raimondi/delimitMate'
-                              Plug 'tpope/vim-surround'
-                              "" error detect
-                              Plug 'scrooloose/syntastic'
-                              "" delete white space
-                              Plug 'bronson/vim-trailing-whitespace'
-                              "" auto complete
-                              Plug 'sheerun/vim-polyglot'
-                              Plug 'Valloric/YouCompleteMe'
-                              Plug 'ervandew/supertab'
-                              "" html
-                              Plug 'hail2u/vim-css3-syntax'
-                              Plug 'gorodinskiy/vim-coloresque'
-                              Plug 'tpope/vim-haml'
-                              Plug 'mattn/emmet-vim'
-                              "" javascript
-                              Plug 'jelera/vim-javascript-syntax'
-                              "" php
-                              Plug 'arnaud-lb/vim-php-namespace'
-                              "" python
-                              Plug 'davidhalter/jedi-vim'
-                              Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
-                              "" space + sh -> vimshell
-                              Plug 'Shougo/vimshell.vim'
-                              "2019-08-26 日本語マニュアル追記
-                              Plug 'vim-jp/vimdoc-ja'
-                              "ranger 追加 2021-02-17動かない？
-                              Plug 'francoiscabrol/ranger.vim'
-                              " ranger　追加2021-02-17
-                              "vim-plug
-                              Plug 'iberianpig/ranger-explorer.vim'
-                              "vim-renamer
-                              Plug 'qpkorr/vim-renamer'
+Plug 'joshdick/onedark.vim'
+"vim-plug
+Plug 'iberianpig/ranger-explorer.vim'
+" Plug 'junegunn/fzf'
+" Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/remote', 'do': ':UpdateRemotePlugins' }
+"
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/remote', 'do': ':UpdateRemotePlugins' }
+"
+Plug 'chengzeyi/fzf-preview.vim'
 
-                              "カラースキーム関係
-                              " https://qiita.com/KeitaNakamura/items/6073a872df5452a36dd6
-                              Plug 'Shougo/unite.vim'
-                              Plug 'ujihisa/unite-colorscheme'
-                              " カラースキーム一覧
-                              Plug 'altercation/vim-colors-solarized' " solarized
-                              Plug 'croaker/mustang-vim'              " mustang
-                              Plug 'jeffreyiacono/vim-colors-wombat'  " wombat
-                              Plug 'nanotech/jellybeans.vim'          " jellybeans
-                              Plug 'vim-scripts/Lucius'               " lucius
-                              Plug 'vim-scripts/Zenburn'              " zenburn
-                              Plug 'mrkn/mrkn256.vim'                 " mrkn256
-                              Plug 'jpo/vim-railscasts-theme'         " railscasts
-                              Plug 'therubymug/vim-pyte'              " pyte
-                              Plug 'tomasr/molokai'                   " molokai
-                              Plug 'chriskempson/vim-tomorrow-theme'  " tomorrow night
-                              Plug 'vim-scripts/twilight'             " twilight
-                              Plug 'w0ng/vim-hybrid'                  " hybrid
-                              Plug 'freeo/vim-kalisi'                 " kalisi
-                              Plug 'morhetz/gruvbox'                  " gruvbox
-                              Plug 'toupeira/vim-desertink'           " desertink
-                              Plug 'sjl/badwolf'                      " badwolf
-                              Plug 'itchyny/landscape.vim'            " landscape
-                              Plug 'joshdick/onedark.vim'             " onedark in atom
-                              Plug 'gosukiwi/vim-atom-dark'           " atom-dark
+
+
+Plug 'previm/previm'
+
+
+
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+
+Plug  'skanehira/translate.vim'
+
+
+Plug 'thinca/vim-quickrun'
+
+
+Plug 'previm/previm'
+
+Plug 'mattn/vim-maketable'
+
+
+Plug 'Shougo/unite.vim'
+
+Plug 'ujihisa/unite-colorscheme'
+
+Plug 'vim-jp/vimdoc-ja'
+
+
+" https://qiita.com/reireias/items/beaa3bb0e299ae934217
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'tomtom/tcomment_vim' "コメントアウト系
+
+Plug 'tpope/vim-surround' "you sourround me
+Plug 'cohama/lexima.vim' "カッコ自動補完
+
+Plug 'Yggdroot/indentLine' "インデントの可視化
+
+Plug 'sorah/presen.vim'"プレゼン
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+Plug 'ervandew/supertab'
+
 
                               call plug#end()
 
@@ -249,10 +233,10 @@ map <C-n> :NERDTreeToggle<CR>
 " 他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" 隠しファイルを表示する
-let NERDTreeShowHidden = 1
-" https://stackoverflow.com/questions/4819079/vim-nerdtree-open-bookmarks-when-vim-is-started
-let NERDTreeShowBookmarks=1
+" " 隠しファイルを表示する
+" let NERDTreeShowHidden = 1
+" " https://stackoverflow.com/questions/4819079/vim-nerdtree-open-bookmarks-when-vim-is-started
+" let NERDTreeShowBookmarks=1
 
 
 
@@ -285,18 +269,18 @@ let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
 
-"" jedi-vim
-let g:jedi#popup_on_dot = 0
-let g:jedi#goto_assignments_command = "<leader>g"
-let g:jedi#goto_definitions_command = "<leader>d"
-let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>n"
-let g:jedi#rename_command = "<leader>r"
-let g:jedi#show_call_signatures = "0"
-let g:jedi#completions_command = "<C-Space>"
-let g:jedi#smart_auto_mappings = 0
-let g:jedi#force_py_version = 3
-autocmd FileType python setlocal completeopt-=preview
+" "" jedi-vim
+" let g:jedi#popup_on_dot = 0
+" let g:jedi#goto_assignments_command = "<leader>g"
+" let g:jedi#goto_definitions_command = "<leader>d"
+" let g:jedi#documentation_command = "K"
+" let g:jedi#usages_command = "<leader>n"
+" let g:jedi#rename_command = "<leader>r"
+" let g:jedi#show_call_signatures = "0"
+" let g:jedi#completions_command = "<C-Space>"
+" let g:jedi#smart_auto_mappings = 0
+" let g:jedi#force_py_version = 3
+" autocmd FileType python setlocal completeopt-=preview
 
 "" syntastic
 let g:syntastic_python_checkers=['python', 'flake8']
@@ -385,11 +369,12 @@ let python_highlight_all = 1
 "                 \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 " augroup END
 
-
+" コマンドモードに簡単に入れるように
+nnoremap ; :
 
 
 "escを押した時の挙動 2019-06-11 追記
-"inoremap <ESC> <ESC>:set iminsert=0<CR>  " ESCでIMEを確実にOFF"
+inoremap <ESC> <ESC>:set iminsert=0<CR>  " ESCでIMEを確実にOFF"
 "2019-08-26 日本語マニュアル用にプラグインとともに追記
 set helplang=ja,en
 
@@ -435,8 +420,11 @@ inoremap っｊ <ESC>
 "<c-r>: redoが覚え辛いので変更
 nnoremap U <c-r>
 "自然なキーマップで移動量拡張
-nnoremap J 10<Down>
-nnoremap K 10<Up>
+" nnoremap J 10<Down>
+" nnoremap K 10<Up>
+
+nnoremap J gT
+nnoremap L gt
 
 
 "for Python in vscode
@@ -460,11 +448,11 @@ set clipboard+=unnamed
 nnoremap <Leader>qqq :q!<CR>
 
 "" split
-nnoremap <Leader>s :<C-u>split<CR>
-nnoremap <Leader>v :<C-u>vsplit<CR>
+nnoremap <Leader>s :<C-u>new<CR>
+nnoremap <Leader>v :<C-u>vnew<CR>
 
 "" Tabs
-nnoremap <Leader>t :tabnew<CR>
+nnoremap <c-n> :tabnew<CR>
 
 "" 検索
 vnoremap <Leader><Leader> :%s/
@@ -546,3 +534,47 @@ endif
 
 set foldtext=getline(v:foldstart)
 hi Folded ctermfg=grey
+
+
+
+"================================================
+"Ranger ranger-explorer.vim
+nnoremap <silent><Leader>r :RangerOpenCurrentFile<CR>
+"autocmd vimenter * RangerOpenCurrentFile
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | RangerOpenCurrentDir | endif
+"nnoremap <silent><Leader>c :RangerOpenCurrentDir<CR>
+"nnoremap <silent><Leader>f :RangerOpenProjectRootDir<CR>
+
+let g:nvim_ghost_use_script = 1
+let g:nvim_ghost_python_ejecutable = '/usr/bin/python'
+
+
+" macだと動かない
+" nnoremap <C-CR> :QuickRun<CR>
+
+" https://qiita.com/ahiruman5/items/4f3c845500c172a02935
+set wildmenu " コマンドモードの補完
+set history=5000 " 保存するコマンド履歴の数
+
+
+"indentline"
+let g:indentLine_color_term =239
+let g:indentLine_color_gui = '#708090'
+let g:indentLine_char = '¦'
+
+
+" vimrcを出す
+nnoremap <leader>, :tabnew ~/.vimrc<CR>
+" backspaceが効かない
+set backspace=indent,eol,start
+
+
+
+" http://miniman2011.blog55.fc2.com/blog-entry-293.html
+let g:quickrun_config={'*': {'split': 'vertical'}}
+
+" https://note.com/yasukotelin/n/na87dc604e042
+" 補完表示時のEnterで改行をしない
+inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
+
