@@ -301,3 +301,20 @@ shift + cmd - right  : yabai -m window --display 1; yabai -m display --focus 1
 #           yabai -m window --toggle topmost;\
 #           yabai -m window --toggle pip
 #
+#
+
+
+
+# stacks
+cmd + alt - l : yabai -m window --stack next
+cmd + alt - h : yabai -m window --stack prev
+
+cmd + alt - k : yabai -m window --focus stack.prev
+cmd + alt - j : yabai -m window --focus stack.next
+cmd + alt - t : yabai -m window --toggle float && yabai -m window --grid 4:4:1:1:2:2
+
+# 右ウインドウに移動
+alt + cmd - left  : yabai -m window --display next; yabai -m display --focus next
+# cmd + cmd - 1  : yabai -m window --display 1; yabai -m display --focus 1
+# 左ウインドウに移動
+alt + cmd - right  : yabai -m window --display 1; yabai -m display --focus 1
