@@ -1,4 +1,3 @@
-
 "setting
 "文字コードをUFT-8に設定
 set fenc=utf-8
@@ -38,7 +37,7 @@ nnoremap j gj
 nnoremap k gk
 
 " http://vimblog.hatenablog.com/entry/vimrc_key_mapping
-nnoremap ; :
+" nnoremap ; :
 
 
 
@@ -164,6 +163,12 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'ervandew/supertab'
 
+Plug 'dracula/vim'
+
+Plug 'easymotion/vim-easymotion'
+
+Plug 'preservim/nerdtree'
+
 
                               call plug#end()
 
@@ -206,23 +211,23 @@ let g:airline_skip_empty_sections = 1
 
 "  emmet
 
-"" nerdtree
-" let g:NERDTreeChDirMode=2
-" let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
-" let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
-" let g:NERDTreeShowBookmarks=1
-" let g:nerdtree_tabs_focus_on_files=1
-" let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
-" let g:NERDTreeWinSize = 30
-" let NERDTreeShowHidden=1
-" set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
-" nnoremap <Leader>dir :NERDTreeTabsToggle<CR>
-" autocmd BufWritePre * :FixWhitespace
-" augroup NERD
-"     au!
-"     autocmd VimEnter * NERDTree
-"     autocmd VimEnter * wincmd p
-" augroup END
+" nerdtree
+let g:NERDTreeChDirMode=2
+let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
+let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
+let g:NERDTreeShowBookmarks=1
+let g:nerdtree_tabs_focus_on_files=1
+let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
+let g:NERDTreeWinSize = 30
+let NERDTreeShowHidden=1
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
+nnoremap <Leader>dir :NERDTreeTabsToggle<CR>
+autocmd BufWritePre * :FixWhitespace
+augroup NERD
+    au!
+    autocmd VimEnter * NERDTree
+    autocmd VimEnter * wincmd p
+augroup END
 "
 "https://www.toumasu-program.net/entry/2019/01/28/105352
 autocmd StdinReadPre * let s:std_in=1
@@ -233,10 +238,10 @@ map <C-n> :NERDTreeToggle<CR>
 " 他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" " 隠しファイルを表示する
-" let NERDTreeShowHidden = 1
-" " https://stackoverflow.com/questions/4819079/vim-nerdtree-open-bookmarks-when-vim-is-started
-" let NERDTreeShowBookmarks=1
+ " 隠しファイルを表示する
+let NERDTreeShowHidden = 1
+" https://stackoverflow.com/questions/4819079/vim-nerdtree-open-bookmarks-when-vim-is-started
+let NERDTreeShowBookmarks=1
 
 
 
@@ -370,11 +375,12 @@ let python_highlight_all = 1
 " augroup END
 
 " コマンドモードに簡単に入れるように
-nnoremap ; :
+" nnoremap ; :
 
 
 "escを押した時の挙動 2019-06-11 追記
-inoremap <ESC> <ESC>:set iminsert=0<CR>  " ESCでIMEを確実にOFF"
+inoremap <ESC> <ESC>:set iminsert=0<CR>  
+" ESCでIMEを確実にOFF"
 "2019-08-26 日本語マニュアル用にプラグインとともに追記
 set helplang=ja,en
 
@@ -429,7 +435,7 @@ nnoremap L gt
 
 "for Python in vscode
 "マークダウン追記 iで一旦インサートモードへ
-nnoremap <Leader>l i# %% [markdown]<CR># ##<ESC>
+nnoremap <Leader>l i# %% [markdown]<CR># ## <ESC>
 
 "print追記
 nnoremap <Leader>p iprint()<ESC>i
@@ -464,13 +470,26 @@ nnoremap <Leader><Leader> :%s/
 "Terminal 最下部に表示
 " https://knowledge.sakura.ad.jp/23018/
 nnoremap <Leader>t :bo terminal<CR>
+nnoremap <Leader><Leader>t :vert terminal<CR>
 
 " https://knowledge.sakura.ad.jp/23018/
 nnoremap <Leader>vt :vert terminal<CR>
 
+" マークダウン速記用
+nnoremap - 0i- <ESC>
+nnoremap # 0i# <ESC>
+nnoremap ## 0i## <ESC>
+nnoremap ### 0i### <ESC>
+
+
+vnoremap - 0<S-i>- <ESC>
+vnoremap # 0<S-i># <ESC>
+vnoremap ## 0<S-i>## <ESC>
+vnoremap ### 0<S-i>### <ESC>
+
 "折りたたみ
-nnoremap ;; zf
-vnoremap ;; zf
+" nnoremap ;; zf
+" vnoremap ;; zf
 
 "カラースキーム関係は後ろの方に入れていないとエラーになる???
 "https://rcmdnk.com/blog/2017/07/18/computer-vim/

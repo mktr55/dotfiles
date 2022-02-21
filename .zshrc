@@ -168,22 +168,22 @@ alias kdrive="sudo mount -t drvfs K: /mnt/kdrive"
 
 
 # added by Anaconda3 5.1.0 installer
-export PATH="/Users/kz/anaconda3/bin:$PATH"  # commented out by conda initialize
+# export PATH="/Users/kz/anaconda3/bin:$PATH"  # commented out by conda initialize  # commented out by conda initialize
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/kz/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
+else
+    if [ -f "/Users/kz/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/kz/opt/anaconda3/etc/profile.d/conda.sh"
     else
-        if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-                . "/opt/anaconda3/etc/profile.d/conda.sh"
-                    else
-                            export PATH="/opt/anaconda3/bin:$PATH"
-                                fi
-                                fi
-                                unset __conda_setup
-                                # <<< conda initialize <<<
+        export PATH="/Users/kz/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
 # ---------------------
 # 起動時にtmux起動  https://qiita.com/fieldville/items/e24500165be947db8eaa
@@ -206,4 +206,15 @@ if [ $? -eq 0 ]; then
 # Starship
 #eval "$(starship init zsh)"
 
+
+fx() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir"
+}
+
+export PATH="/usr/local/sbin:$PATH"
+
+fish
 
