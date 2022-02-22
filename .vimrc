@@ -211,32 +211,32 @@ let g:airline_skip_empty_sections = 1
 
 "  emmet
 
-" nerdtree
-let g:NERDTreeChDirMode=2
-let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
-let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
-let g:NERDTreeShowBookmarks=1
-let g:nerdtree_tabs_focus_on_files=1
-let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
-let g:NERDTreeWinSize = 30
-let NERDTreeShowHidden=1
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
-nnoremap <Leader>dir :NERDTreeTabsToggle<CR>
-autocmd BufWritePre * :FixWhitespace
-augroup NERD
-    au!
-    autocmd VimEnter * NERDTree
-    autocmd VimEnter * wincmd p
-augroup END
+"" nerdtree
+"let g:NERDTreeChDirMode=2
+"let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
+"let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
+"let g:NERDTreeShowBookmarks=1
+"let g:nerdtree_tabs_focus_on_files=1
+"let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
+"let g:NERDTreeWinSize = 30
+"let NERDTreeShowHidden=1
+"set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
+"nnoremap <Leader>dir :NERDTreeTabsToggle<CR>
+"autocmd BufWritePre * :FixWhitespace
+"augroup NERD
+"    au!
+"    autocmd VimEnter * NERDTree
+"    autocmd VimEnter * wincmd p
+"augroup END
+""
+""https://www.toumasu-program.net/entry/2019/01/28/105352
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"map <C-n> :NERDTreeToggle<CR>
 "
-"https://www.toumasu-program.net/entry/2019/01/28/105352
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-map <C-n> :NERDTreeToggle<CR>
-
-"https://qiita.com/yaginuuu/items/d0a8d045035ab251c96c
-" 他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+""https://qiita.com/yaginuuu/items/d0a8d045035ab251c96c
+"" 他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
  " 隠しファイルを表示する
 let NERDTreeShowHidden = 1
@@ -244,6 +244,13 @@ let NERDTreeShowHidden = 1
 let NERDTreeShowBookmarks=1
 
 
+" ファイル指定の場合はnerdtreeを開かない
+" https://www.dazhuanlan.com/liping_max/topics/1543695
+autocmd StdinReadPre * let s:std_in=1
+
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"キーマップ
+map <C-n> :NERDTreeToggle<CR>
 
 "" quickrun
  
@@ -458,7 +465,7 @@ nnoremap <Leader>s :<C-u>new<CR>
 nnoremap <Leader>v :<C-u>vnew<CR>
 
 "" Tabs
-nnoremap <c-n> :tabnew<CR>
+"nnoremap <c-n> :tabnew<CR>
 
 "" 検索
 vnoremap <Leader><Leader> :%s/
